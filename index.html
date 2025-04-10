@@ -4,12 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reda Lazrak | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 50px; /* Adds space for sticky navbar */
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #34495e;
+            padding: 15px 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* About Me Section */
+        .about {
+            padding: 80px 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #7f8c8d;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .skills .skill-card {
+            background-color: #3498db;
+            color: white;
+            display: inline-block;
+            margin: 15px;
+            padding: 30px 40px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            width: 200px;
+            transition: background-color 0.3s;
+        }
+
+        .skills .skill-card:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .projects .project-card {
+            background-color: #f39c12;
+            color: white;
+            display: inline-block;
+            margin: 15px;
+            padding: 25px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            width: 250px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .projects .project-card:hover {
+            background-color: #e67e22;
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #bdc3c7;
+        }
+
+        .contact .btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact .btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .skills .skill-card,
+            .projects .project-card {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <h1>Hi, I'm <span>Reda Lazrak</span></h1>
             <p>Creative Developer & Designer</p>
@@ -21,24 +264,24 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I'm a passionate developer who loves to create unique and innovative web experiences. Always learning and exploring new technologies.</p>
+            <p>I'm a passionate developer who loves to create unique and innovative web experiences. I am constantly learning and exploring new technologies to build user-friendly, engaging websites.</p>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="skills">
+    <section id="skills" class="skills">
         <div class="container">
             <h2>Skills</h2>
-            <div class="skill-card">HTML and CSS</div>
+            <div class="skill-card">HTML & CSS</div>
             <div class="skill-card">Word Exel PowerPoint</div>
             <div class="skill-card">Marketing</div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects">
+    <section id="projects" class="projects">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>Project</h2>
             <div class="project-card">
                 <h3>Online Store</h3>
                 <p>An interactive e-commerce platform with a sleek and user-friendly design.</p>
@@ -47,7 +290,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
+    <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Me</h2>
             <p>Let's connect and create something amazing together!</p>
